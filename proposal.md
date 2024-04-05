@@ -3,9 +3,10 @@
 ## Grupo
 ### Integrantes
 * 50970 Bouvier, Juan Adrián
-* 42969 Zapata, Mayra Belen
-* 50839 Tejedor Paloma
 * 48711 Speranza Facundo
+* 50839 Tejedor Paloma
+* 42969 Zapata, Mayra Belen
+
 ## Tema
 ### Descripción
 
