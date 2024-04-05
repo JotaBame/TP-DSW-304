@@ -28,8 +28,8 @@ Regularidad:
 |:-|:-|
 |CRUD simple|1. CRUD horarios<br>2. CRUD tipo-deporte<br>3. CRUD costo|
 |CRUD dependiente|1. CRUD deporte {depende de} CRUD tipo-deporte, CRUD costo, CRUD horarios<br>2. CRUD Usuario {depende de} CRUD deporte|
-|Listado<br>+<br>detalle| 1. Listado de habitaciones filtrado por tipo de habitación, muestra nro y tipo de habitación => detalle CRUD Habitacion<br> 2. Listado de reservas filtrado por rango de fecha, muestra nro de habitación, fecha inicio y fin estadía, estado y nombre del cliente => detalle muestra datos completos de la reserva y del cliente|
-|CUU/Epic|1. Reservar una habitación para la estadía<br>2. Realizar el check-in de una reserva|
+|Listado<br>+<br>detalle| 1. Listado de deporte filtrado por horario y costo (al cual inscribirse) => detalle CRUD deporte<br> 2. Listar deportes de un usuario|
+|CUU/Epic|1. Inscribirse a un torneo<br>2. Dar de baja un deporte|
 
 
 
