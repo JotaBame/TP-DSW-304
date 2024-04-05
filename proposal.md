@@ -36,7 +36,7 @@ Adicionales para Aprobación:
 |Req|Detalle|
 |:-|:-|
 |CRUD |1. CRUD Socio <br>2. CRUD Empleado<br>3. CRUD Torneo<br>4. CRUD Deporte<br>5. CRUD Costo<br>6. CRUD horarios<br>7. CRUD tipo-deporte|
-|CUU/Epic|1. Reseñar un libro comprado|
+|CUU/Epic|1. |
 
 
 
