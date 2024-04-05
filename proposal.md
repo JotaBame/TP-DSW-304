@@ -32,5 +32,11 @@ Regularidad:
 |Listado<br>+<br>detalle| 1. Listado de deporte filtrado por horario y costo (al cual inscribirse) => detalle CRUD deporte<br> 2. Listar deportes de un usuario|
 |CUU/Epic|1. Inscribirse a un torneo<br>2. Dar de baja un deporte|
 
+Adicionales para Aprobación:
+|Req|Detalle|
+|:-|:-|
+|CRUD |1. CRUD Socio <br>2. CRUD Empleado<br>3. CRUD Torneo<br>4. CRUD Deporte<br>5. CRUD Costo<br>6. CRUD horarios<br>7. CRUD tipo-deporte|
+|CUU/Epic|1. Reseñar un libro comprado|
+
 
 
