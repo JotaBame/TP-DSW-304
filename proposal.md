@@ -27,8 +27,8 @@ Realizaremos un software para la administración de un Club de Deportes. Este eg
 Regularidad:
 |Req|Detalle|
 |:-|:-|
-|CRUD simple|1. CRUD horarios<br>2. CRUD tipo-deporte<br>3. CRUD costo<br>4. CRUD socio<br>5. CRUD empleado<br>6. CRUD torneo|
-|CRUD dependiente|1. CRUD deporte {depende de} CRUD tipo-deporte, CRUD costo, CRUD horarios<br>2. CRUD Usuario {depende de} CRUD deporte|
+|CRUD simple|1. CRUD horarios<br>2. CRUD tipo-deporte<br>3. CRUD costo<br>4. CRUD empleado|
+|CRUD dependiente|1. CRUD deporte {depende de} CRUD tipo-deporte, CRUD costo, CRUD horarios<br>2. CRUD socio {depende de} CRUD deporte|
 |Listado<br>+<br>detalle| 1. Listado de deporte filtrado por horario y costo (al cual inscribirse) => detalle CRUD deporte<br> 2. Listar deportes de un usuario|
 |CUU/Epic|1. Inscribirse a un torneo<br>2. Dar de baja un deporte|
 
