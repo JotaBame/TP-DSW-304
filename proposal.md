@@ -3,7 +3,8 @@
 ## Grupo
 ### Integrantes
 * 50970 Bouvier, Juan Adrián
-
+* 42969 Zapata, Mayra Belen
+  
 ## Tema
 ### Descripción
 *2 a 6 líneas describiendo el negocio (menos es más)*
