@@ -34,7 +34,8 @@ Adicionales para Aprobación:
 |Req|Detalle|
 |:-|:-|
 |CRUD |1. CRUD Socio <br>2. CRUD Empleado<br>3. CRUD Torneo<br>4. CRUD Deporte<br>5. CRUD Costo<br>6. CRUD horarios<br>7. CRUD tipo-deporte|
-|CUU/Epic|1. Realizar el pago de una cuota, teniendo en cuenta bonificaciones y descuentos|
+|CUU/Epic|1. Inscribirse a un torneo<br>2. Dar de baja un deporte<br>3. Realizar el pago de una cuota, teniendo en cuenta bonificaciones y descuento|
+
 
 
 
