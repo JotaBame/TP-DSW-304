@@ -8,7 +8,8 @@
 * 
 ## Tema
 ### Descripción
-Club de Deportes
+
+### Club de Deportes
 
 Realizaremos un software para la administración de un Club de Deportes. Este egistrará los datos de las personas socias y los empleados, permitirá dar de alta, dar baja y ejecutar la modificación de los diferentes deportes para el club. Permitirá organizar torneos para las personas que sean socias. Los socios deberan abonar mensualmente su cuota dependiendo su edad, ya que se pueden realizar diferentes promociones y descuentos.
 
