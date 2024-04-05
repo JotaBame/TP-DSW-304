@@ -22,8 +22,6 @@ Realizaremos un software para la administración de un Club de Deportes. Este re
 
 ### Alcance Mínimo
 
-*Nota*: el siguiente es un ejemplo para un grupo de 3 integrantes para un sistema de hotel. El 
-
 Regularidad:
 |Req|Detalle|
 |:-|:-|
@@ -36,7 +34,7 @@ Adicionales para Aprobación:
 |Req|Detalle|
 |:-|:-|
 |CRUD |1. CRUD Socio <br>2. CRUD Empleado<br>3. CRUD Torneo<br>4. CRUD Deporte<br>5. CRUD Costo<br>6. CRUD horarios<br>7. CRUD tipo-deporte|
-|CUU/Epic|1. |
+|CUU/Epic|1. Realizar el pago de una cuota, teniendo en cuenta bonificaciones y descuentos|
 
 
 
