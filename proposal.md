@@ -7,7 +7,8 @@
   
 ## Tema
 ### Descripción
-*2 a 6 líneas describiendo el negocio (menos es más)*
+Club de Deportes
+Realizaremos un software para administrar un club de deportes. Registrará los datos de socios y empleados, permitirá dar de alta, baja y modificar deportes para el club. Permitirá organizar torneos y le permitirá a un socio pagar sus cuotas mensuales a través de la aplicación, la cual también lo mantendra informado de descuentos y recargos. 
 
 ### Modelo
 [imagen del modelo]()
