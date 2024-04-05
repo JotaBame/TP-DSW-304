@@ -4,7 +4,8 @@
 ### Integrantes
 * 50970 Bouvier, Juan Adrián
 * 42969 Zapata, Mayra Belen
-  
+* 50839 Tejedor Paloma
+* 
 ## Tema
 ### Descripción
 Club de Deportes
