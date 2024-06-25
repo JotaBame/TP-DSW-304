@@ -1,48 +1,32 @@
 import { Repository } from '../shared/repository.js'
 import { Deporte } from './deporte.entity.js';
+import { db } from '../shared/db/conn.js'
+import { ObjectId } from 'mongodb'
 
+const deportes = db.collection<Deporte>('deportes')
 
-export const deportes = [
-    new Deporte(
-      " ",
-      0,
-      " ",
-      0,
-      'a02b91bc-3769-4221-beb1-d7a3aeba7dad'
-    ),
-  ];
-  
-
-  export class DeporteRepository implements Repository<Deporte> {
-    public findAll(): Deporte[] | undefined {
-      return deportes
-    }
-  
-    public findOne(item: { id: string }): Deporte | undefined {
-      return deportes.find((deporte) => deporte.id === item.id)
-    }
-  
-    public add(item: Deporte): Deporte | undefined {
-      deportes.push(item)
-      return item
-    }
-  
-    public update(item: Deporte): Deporte | undefined {
-      const deporteIdx = deportes.findIndex((deporte) => deporte.id === item.id)
-  
-      if (deporteIdx !== -1) {
-        deportes[deporteIdx] = { ...deportes[deporteIdx], ...item }
-      }
-      return deportes[deporteIdx]
-    }
-  
-    public delete(item: { id: string }): Deporte | undefined {
-      const deporteIdx = deportes.findIndex((deporte) => deporte.id === item.id)
-  
-      if (deporteIdx !== -1) {
-        const deletedDeportes = deportes[deporteIdx]
-        deportes.splice(deporteIdx, 1)
-        return deletedDeportes
-      }
-    }
+export class DeporteRepository implements Repository<Deporte> {
+  public async findAll(): Promise<Deporte[] | undefined> {
+    return await deportes.find().toArray()
   }
+
+  public async findOne(item: { id: string }): Promise<Deporte | undefined> {
+    const _id = new ObjectId(item.id)
+    return (await deportes.findOne({ _id })) || undefined
+  }
+
+  public async add(item: Deporte): Promise<Deporte | undefined> {
+    item._id = (await deportes.insertOne(item)).insertedId
+    return item
+  }
+
+  public async update(id: string, item: Deporte): Promise<Deporte | undefined> {
+    const _id = new ObjectId(id)
+    return (await deportes.findOneAndUpdate({ _id }, { $set: item }, { returnDocument: 'after' })) || undefined
+  }
+
+  public async delete(item: { id: string }): Promise<Deporte | undefined> {
+    const _id = new ObjectId(item.id)
+    return (await deportes.findOneAndDelete({ _id })) || undefined
+  }
+}

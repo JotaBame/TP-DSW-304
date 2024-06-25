@@ -1,8 +1,8 @@
+import { ObjectId } from 'mongodb'
 import crypto from 'node:crypto'
 
 export class Deporte {
-  static id: string;
-  constructor(
+   constructor(
     public tipo: string,
     public cupo: number,
     public horario: string,

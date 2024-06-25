@@ -20,8 +20,8 @@ function sanitizeDeporteInput(req: Request, res: Response, next: NextFunction) {
     })
     next()
   }
-function findAll(req: Request, res: Response) {
-  res.json({ data: repository.findAll() })
+async function findAll(req: Request, res: Response) {
+  res.json({ data: await repository.findAll() })
 }
 
 function findOne(req: Request, res: Response) {
@@ -33,7 +33,7 @@ function findOne(req: Request, res: Response) {
   res.json({ data: deporte })
 }
 
-function add(req: Request, res: Response) {
+async function add(req: Request, res: Response) {
   const input = req.body.sanitizedInput
 
   const deporteInput = new Deporte(
@@ -44,13 +44,13 @@ function add(req: Request, res: Response) {
  
   )
 
-  const deporte = repository.add(deporteInput)
+  const deporte = await repository.add(deporteInput)
   return res.status(201).send({ message: 'Deporte creado', data: deporte })
 }
 
-function update(req: Request, res: Response) {
+async function update(req: Request, res: Response) {
   req.body.sanitizedInput.id = req.params.id
-  const deporte = repository.update(req.body.sanitizedInput)
+  const deporte = await repository.update(req.body.sanitizedInput)
 
   if (!deporte) {
     return res.status(404).send({ message: 'Deporte no encontrado' })
@@ -59,9 +59,9 @@ function update(req: Request, res: Response) {
   return res.status(200).send({ message: 'Deportes actualizado exitosamente', data: deporte })
 }
 
-function remove(req: Request, res: Response) {
+async function remove(req: Request, res: Response) {
   const id = req.params.id
-  const deporte = repository.delete({ id })
+  const deporte = await repository.delete({ id })
 
   if (!deporte) {
     res.status(404).send({ message: 'Deporte no encontrado' })
