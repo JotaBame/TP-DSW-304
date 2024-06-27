@@ -16,7 +16,7 @@ export class DeporteRepository implements Repository<Deporte> {
   }
 
   public async add(item: Deporte): Promise<Deporte | undefined> {
-    item._id = (await deportes.insertOne(item)).insertedId
+    item._id = (await deportes.insertOne(item)).insertedId 
     return item
   }
 

@@ -7,6 +7,6 @@ export class Deporte {
     public cupo: number,
     public horario: string,
     public costo: number,
-    public id = crypto.randomUUID()
+    public _id?: ObjectId
   ) {}
 }

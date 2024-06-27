@@ -47,10 +47,8 @@ async function add(req: Request, res: Response) {
   const deporte = await repository.add(deporteInput)
   return res.status(201).send({ message: 'Deporte creado', data: deporte })
 }
-
 async function update(req: Request, res: Response) {
-  req.body.sanitizedInput.id = req.params.id
-  const deporte = await repository.update(req.body.sanitizedInput)
+  const deporte = await repository.update(req.params.id, req.body.sanitizedInput)
 
   if (!deporte) {
     return res.status(404).send({ message: 'Deporte no encontrado' })
@@ -58,6 +56,7 @@ async function update(req: Request, res: Response) {
 
   return res.status(200).send({ message: 'Deportes actualizado exitosamente', data: deporte })
 }
+ 
 
 async function remove(req: Request, res: Response) {
   const id = req.params.id
