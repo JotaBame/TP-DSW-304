@@ -1,3 +1,5 @@
+import { deportes } from "../deporte/deportes";
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -15,20 +17,20 @@ socioSchema.virtual('cuotaMensual').get(function() {
   let cuotaBase = 100; // Cuota base mensual
 
   //  recargo por número de deportes
-  if (this.deportes === 1) {
+  if (socioSchema.deporte === 1) {
     cuotaBase *= 1.10; // 10% si practica 1 deporte
-  } else if (this.deportes > 1) {
+  } else if (socioSchema.deporte > 1) {
     cuotaBase *= 1.20; // mayor si practica más de 1 deporte
   }
 
  
-  if (this.esEstudiante) {
+  if (socioSchema.esEstudiante) {
     cuotaBase *= 0.80; 
     // Descuento del 20% para estudiantes
   }
 
 
-  if (this.esMayorDe60) {
+  if (socioSchema.esMayorDe60) {
     cuotaBase *= 0.50; // Descuento del 50% para mayores de 60 años
   }
 
