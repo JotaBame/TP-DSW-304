@@ -5,3 +5,4 @@ export interface Repository <T> {
   update(id: string, item: T): Promise<T | undefined>
   delete(item: { id: string }): Promise<T | undefined>
 }
+ 

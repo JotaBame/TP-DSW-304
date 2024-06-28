@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "mongodb": "^6.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.2"
   }
 }
