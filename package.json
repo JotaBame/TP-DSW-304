@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "express": "^4.19.2",
     "mongodb": "^6.7.0"
   },
   "devDependencies": {
+    "@types/node": "^22.0.2",
     "typescript": "^5.5.2"
   }
 }

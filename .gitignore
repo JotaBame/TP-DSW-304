@@ -22,3 +22,6 @@ out/
 
 # Archivos de configuración personal
 *.local
+
+# Archivos temporales internos de Git
+*.wt

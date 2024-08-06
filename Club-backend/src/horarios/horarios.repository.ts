@@ -5,6 +5,7 @@ import { db } from '../shared/db/conn.js'
 
 const deportes = db.collection<Deporte>('deportes')
 const deportes2 = deportes.find().toArray()
+const horarios = db.collection<Horario>('horarios')
   
   export class HorarioRepository implements Repository<Horario> {
 
