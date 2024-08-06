@@ -15,7 +15,6 @@ out/
 .idea/
 
 # Archivos temporales y de sistema
-*.log
 *.tmp
 *.swp
 *.DS_Store
@@ -23,5 +22,46 @@ out/
 # Archivos de configuración personal
 *.local
 
-# Archivos temporales internos de Git
+
 *.wt
+*.turtle
+WiredTigerLog.*
+mongod.lock
+storage.bson
+data/
+db/
+
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de registro de WiredTiger
+WiredTiger*
+WiredTiger.lock
+WiredTigerLAS*
+
+# Ignorar archivos de datos de MongoDB
+*.ns
+*.wt
+*.log
+
+# Ignorar archivos temporales y de caché
+*.pid
+*.mongodb
+*.mongod.pid
+*.mongos.pid
+*.mongod.lock
+
+# Ignorar directorios de MongoDB
+/mongodb_data
+/mongodb_logs
+
+# Ignorar configuraciones de MongoDB
+*.conf
+
+# Otros archivos temporales
+*.tmp
+*.swp
+*.swo
+
+storage.bson
