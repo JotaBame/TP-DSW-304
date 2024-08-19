@@ -1,5 +1,3 @@
-import { deportes } from "../deporte/deportes";
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

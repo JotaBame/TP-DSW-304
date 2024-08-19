@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { DeporteRepository } from '../deporte/deporte.repository.ts'
-import { Deporte } from '../deporte/deporte.entity.ts'
+import { DeporteRepository } from '../deporte/deporte.repository.js'
 import { Horario } from './horario.entity.js'
 import { HorarioRepository } from './horarios.repository.js'
  

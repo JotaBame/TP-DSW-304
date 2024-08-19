@@ -65,3 +65,5 @@ WiredTigerLAS*
 *.swo
 
 storage.bson
+
+diagnostic.data

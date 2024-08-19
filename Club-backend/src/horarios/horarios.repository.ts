@@ -1,38 +1,35 @@
-import { Repository } from '../shared/repository.ts'
+import { Repository } from '../shared/repository.js'
 import { Horario } from './horario.entity.js';
+import { deportes } from '../deporte/deporte.repository.js';
+import { ObjectId } from 'mongodb'
 import { Deporte } from '../deporte/deporte.entity.js';
-import { db } from '../shared/db/conn.js'
 
-const deportes = db.collection<Deporte>('deportes')
-const deportes2 = deportes.find().toArray()
-const horarios = db.collection<Horario>('horarios')
   
   export class HorarioRepository implements Repository<Horario> {
 
-    public async findAll(): Promise<Horario[] | undefined> {
-      const lista_horarios:Horario[][]=[];
-      (await deportes2).forEach(deporte => { return lista_horarios.push(deporte.horario);});
-    
-      return lista_horarios
+
+    public async findAll(): Promise<Deporte[] | undefined> {
+
+      return await deportes.find({projection:{tipo:1 , horario:1, _id:0}}).toArray()
     }
  
  
 
-    public findOne(item: { id: string }): Promise<Horario[] | undefined> {
-      const deporte_id = deportes.find((deporte) => deporte.id === item.id)
-      return (await deporte_id.horario)
+    public async find(item: { id: string }): Promise<Deporte[] | undefined> {
+      const _id = new ObjectId(item.id)
+      return await  deportes.find({ _id }, { projection: { horario: 1, _id: 0 } }).toArray() || undefined
     }
 
 
-    public async add( item: Horario, item2: {id:string} ): Horario | undefined {
-      const deporte_id = deportes.find((deporte) => deporte.id === item2.id)
-      deporte_id?.horario.push(item)
-
-      return item
+    public async add( item: Horario, id: string): Promise<Deporte | undefined>{
+      const deporteID = new ObjectId(id);
+      let depoHorario = deporte.horario.push(Horario)
+      
+      return await deportes.horario.updateOne({deporteID} , {$set {item}})
     }
   
     
-    public update(item: Horario): Horario | undefined {
+    public update(item: Horario): Promise< Horario | undefined > {
       const horarioIdx = horarios.findIndex((horario) => horario.id === item.id)
   
       if (horarioIdx !== -1) {
@@ -41,7 +38,7 @@ const horarios = db.collection<Horario>('horarios')
       return horarios[horarioIdx]
     }
   
-    public delete(item: { id: string }): Horario | undefined {
+    public delete(item: { id: string }):Promise< Horario | undefined> {
       const horarioIdx = horarios.findIndex((horario) => horario.id === item.id)
   
       if (horarioIdx !== -1) {

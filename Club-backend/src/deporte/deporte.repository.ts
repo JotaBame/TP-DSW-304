@@ -3,7 +3,7 @@ import { Deporte } from './deporte.entity.js';
 import { db } from '../shared/db/conn.js'
 import { ObjectId } from 'mongodb'
 
-const deportes = db.collection<Deporte>('deportes')
+export const deportes = db.collection<Deporte>('deportes')
 
 export class DeporteRepository implements Repository<Deporte> {
   public async findAll(): Promise<Deporte[] | undefined> {
